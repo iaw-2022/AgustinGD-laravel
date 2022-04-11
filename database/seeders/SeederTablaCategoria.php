@@ -18,14 +18,35 @@ class SeederTablaCategoria extends Seeder
     {
         DB::table('categorias')->insert([
             'nombre' => 'Carnes',
-            'descripcion' => 'si es musculo es valido',
+            'descripcion' => 'Si es musculo es valido',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
         DB::table('categorias')->insert([
             'nombre' => 'Lacteos',
-            'descripcion' => 'si es de una ubre mejor',
+            'descripcion' => 'Si es de una ubre mejor',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+
+        DB::table('categorias')->insert([
+            'nombre' => 'Vegetales',
+            'descripcion' => 'Los arboles son vegetales',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+
+        DB::table('categorias')->insert([
+            'nombre' => 'Frutas',
+            'descripcion' => 'Fruto comestible de ciertas plantas y árboles, en especial cuando tiene mucha agua y es de sabor dulce.',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+
+        DB::table('categorias')->insert([
+            'nombre' => 'Organos',
+            'descripcion' => 'Gracias por la imagen mental :)',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
