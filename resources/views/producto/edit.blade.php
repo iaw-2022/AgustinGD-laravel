@@ -1,4 +1,4 @@
-@extends('layouts.test');
+@extends('layouts.plantillabase');
 
 @section('contenido')
 <h2>Editar un Producto</h2>

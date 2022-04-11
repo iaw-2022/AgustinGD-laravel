@@ -1,11 +1,15 @@
-@extends('layouts.test');
+@extends('layouts.plantillabase');
+
+@section('css')
+<link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet"></link>
+@endsection
 
 @section('contenido')
 <a href="productos/create" class="btn btn-primary">AGREGAR</a>
 <h2>Administracion de Productos</h2>
 
-<table class="table table-bordered border-primary">
-    <thead>
+<table id="productos" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
+    <thead class="bg-primary text-white">
         <tr>
         <th scope="col">id</th>
         <th scope="col">Categoria</th>
@@ -16,6 +20,7 @@
         <th scope="col">Imagen</th>
         <th scope="col">Actualizado</th>
         <th scope="col">Creado</th>
+        <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -49,4 +54,19 @@
     </tbody>
 
 </table>
+
+@section('js')
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#productos').dataTable( {
+        "lengthMenu": [ [5, 10, 50, 100, -1], [5, 10, 50, 100, "All"] ]
+    } );
+} );
+</script>
+@endsection
+
 @endsection
