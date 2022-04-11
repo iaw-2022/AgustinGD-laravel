@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class SeederTablaProducto extends Seeder
 {
@@ -21,7 +22,9 @@ class SeederTablaProducto extends Seeder
             'nombre' => 'carne',
             'descripcion' => 'creo que es carne roja',
             'precioPorUnidad' => '100',
-            'imagen_dir' => 'alguna direccion1'
+            'imagen_dir' => 'alguna direccion1',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
         DB::table('productos')->insert([
@@ -30,7 +33,9 @@ class SeederTablaProducto extends Seeder
             'nombre' => 'pollo',
             'descripcion' => 'creo que es carne blanca',
             'precioPorUnidad' => '200',
-            'imagen_dir' => 'alguna direccion2'
+            'imagen_dir' => 'alguna direccion2',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
         DB::table('productos')->insert([
@@ -39,7 +44,9 @@ class SeederTablaProducto extends Seeder
             'nombre' => 'leche',
             'descripcion' => 'creo que es leche blanca',
             'precioPorUnidad' => '300',
-            'imagen_dir' => 'alguna direccion3'
+            'imagen_dir' => 'alguna direccion3',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }
