@@ -40,15 +40,16 @@
                     <td>{{$producto->imagen_dir}}</td>
                     <td>{{$producto->updated_at}}</td>
                     <td>{{$producto->created_at}}</td>
-                    <td>                   
-                        <form action="{{route('productos.destroy', $producto->id)}}" method="POST">
-                        <a href="/productos/{{$producto->id}}/edit" class="btn btn-info">Editar</a>                       
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" onclick="return confirm('Queres eliminar este Producto?')" class="btn btn-danger">
-                                <span class="glyphicon glyphicon-trash"></span>Eliminar
-                            </button>
-                        <form>
+                    <td>
+
+                    <a href="/productos/{{$producto->id}}/edit" class="btn btn-info">Editar</a>                   
+                    <form action="{{route('productos.destroy', $producto->id)}}" method="POST">                                            
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Queres eliminar este Producto?')" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span>Eliminar
+                        </button>
+                    </form>
                     </td>
                 </tr>            
             @endforeach
