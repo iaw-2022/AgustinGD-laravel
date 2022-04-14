@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->foreignId('categoria_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('rol_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->dropForeign('productos_categoria_id_foreign');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('users_rol_id_foreign');
         });
     }
 };

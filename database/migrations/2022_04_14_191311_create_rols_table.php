@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->foreignId('categoria_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
+        Schema::create('rols', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre', 50);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->dropForeign('productos_categoria_id_foreign');
-        });
+        Schema::dropIfExists('rols');
     }
 };
