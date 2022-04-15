@@ -7,8 +7,9 @@
 @stop
 
 @section('content')
+    @can('create', App\Models\Producto::class)
     <a href="productos/create" class="btn btn-primary mb-3">AGREGAR</a>
-
+    @endcan
     <table id="productos" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
         <thead class="bg-primary text-white">
             <tr>
@@ -19,8 +20,10 @@
             <th scope="col">Descripción</th>
             <th scope="col">Precio/Unidad</th>
             <th scope="col">Imagen</th>
+            @can('viewTimeStamps', App\Models\Producto::class)
             <th scope="col">Actualizado</th>
             <th scope="col">Creado</th>
+            @endcan
             <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -38,11 +41,16 @@
                     <td>{{$producto->descripcion}}</td>
                     <td>{{$producto->precioPorUnidad}}</td>
                     <td>{{$producto->imagen_dir}}</td>
+                    @can('viewTimeStamps', App\Models\Producto::class)
                     <td>{{$producto->updated_at}}</td>
                     <td>{{$producto->created_at}}</td>
+                    @endcan
                     <td>
+                    @can('update', App\Models\Producto::class)
+                    <a href="/productos/{{$producto->id}}/edit" class="btn btn-info">Editar&#160&#160&#160&#160&#160</a>
+                    @endcan
 
-                    <a href="/productos/{{$producto->id}}/edit" class="btn btn-info">Editar</a>                   
+                    @can('delete', App\Models\Producto::class)
                     <form action="{{route('productos.destroy', $producto->id)}}" method="POST">                                            
                         @csrf
                         @method('DELETE')
@@ -50,6 +58,7 @@
                             <span class="glyphicon glyphicon-trash"></span>Eliminar
                         </button>
                     </form>
+                    @endcan
                     </td>
                 </tr>            
             @endforeach

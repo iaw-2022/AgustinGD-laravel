@@ -6,6 +6,18 @@
     <h1>Editar un Producto</h1>
 @stop
 
+@can('editParcialActualizador', App\Models\Producto::class)
+    @php
+        $editParcial = 'readonly';
+        $disable = 'disabled'
+    @endphp
+@else
+    @php
+        $editParcial = 'required';
+        $disable = ''
+    @endphp
+@endcan
+
 @section('content')
     <form class="row g-3" action="/productos/{{$producto->id}}" method="POST">
         @csrf
@@ -19,13 +31,12 @@
                 @else
                     <option value="true">Disponible</option> 
                     <option selected value="false">No Disponible</option>
-                @endif
-                    
+                @endif                    
             </select>
         </div>
         <div class="col-8 col-md-8">
             <label for="inputCategoria" class="form-label">Categoria</label>
-            <select id="inputCategoria" name="inputCategoria" class="form-select">
+            <select id="inputCategoria" name="inputCategoria" class="form-select" {{$disable}}>
                 @foreach ($categorias as $categoria)
                     @if($producto->categoria->id == $categoria->id)
                         <option selected value="{{$categoria->id}}">{{$categoria->nombre}}</option>
@@ -34,18 +45,22 @@
                     @endif
                 @endforeach      
             </select>
+            @can('editParcialActualizador', App\Models\Producto::class)
+                <input type="hidden" name="inputCategoria" value="{{$producto->categoria->id}}">
+            @endcan
         </div>
+
         <div class="col-4 col-md-4">
             <label for="inputPrecioPorUnidad" class="form-label">Precio por Unidad</label>
-            <input type="number" step="0.01" class="form-control" id="inputPrecioPorUnidad" name="inputPrecioPorUnidad" value="{{$producto->precioPorUnidad}}" required>
+            <input type="number" step="0.01" class="form-control" id="inputPrecioPorUnidad" name="inputPrecioPorUnidad" value="{{$producto->precioPorUnidad}}" {{$editParcial}}>
         </div>
         <div class="col-8 col-md-8">
             <label for="inputNombre" class="form-label" >Nombre</label>
-            <input type="text" class="form-control" id="inputNombre" name="inputNombre" maxlength="50" value="{{$producto->nombre}}" required>
+            <input type="text" class="form-control" id="inputNombre" name="inputNombre" maxlength="50" value="{{$producto->nombre}}" {{$editParcial}}>
         </div>
         <div class="form-group">
             <label for="inputDescripcion">Descripción</label>
-            <textarea class="form-control" id="inputDescripcion" name="inputDescripcion" rows="3" maxlength="255" required>{{$producto->descripcion}}</textarea>
+            <textarea class="form-control" id="inputDescripcion" name="inputDescripcion" rows="3" maxlength="255" {{$editParcial}}>{{$producto->descripcion}}</textarea>
         </div>
         <div class="col-12">
             <label for="inputImagen" class="form-label">Imagen</label>

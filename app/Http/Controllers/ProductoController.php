@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProductoController extends Controller
 {
@@ -20,6 +23,11 @@ class ProductoController extends Controller
      */
     public function index()
     {
+        if (! Gate::allows('viewAny', Producto::class)) {
+            Auth::logout();
+            abort(403, "Te deben asignar un Rol para acceder");
+        }
+
         $productos = Producto::all();
         return view('producto.index')->with('productos', $productos);
     }
@@ -31,6 +39,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Producto::class);
+
         $categorias = Categoria::all();
         return view('producto.create')->with('categorias', $categorias);
     }
@@ -43,6 +53,8 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Producto::class);
+
         $productos = new Producto();
 
         $productos->categoria_id = $request->get('inputCategoria');
@@ -78,6 +90,8 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('update', Producto::class);
+
         $categorias = Categoria::all();
         $producto = Producto::find($id);
 
@@ -93,6 +107,8 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->authorize('update', Producto::class);
+
         $producto = Producto::find($id);
 
         $producto->categoria_id = $request->get('inputCategoria');
@@ -116,6 +132,8 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
+        $this->authorize('delete', Producto::class);
+
         $producto = Producto::find($id);
         $producto->delete();
         return redirect('/productos');
