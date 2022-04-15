@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Contracts\Auth\CanResetPassword;
+
 return [
 
     /*
@@ -222,8 +224,7 @@ return [
     | For detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
     |
-    */
-
+    
     'menu' => [
         // Navbar items:
 
@@ -246,7 +247,8 @@ return [
             'icon' => 'fas fa-fw fa-users',
         ],
     ],
-
+    */
+    'menu' => [],
     /*
     |--------------------------------------------------------------------------
     | Menu Filters
