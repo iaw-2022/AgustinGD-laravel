@@ -29,7 +29,7 @@ class ProductoController extends Controller
         }
 
         $productos = Producto::all();
-        return view('producto.index')->with('productos', $productos);
+        return view('producto.index')->with('productos', $productos)->with('activeProductos', 'active');
     }
 
     /**
@@ -42,7 +42,7 @@ class ProductoController extends Controller
         $this->authorize('create', Producto::class);
 
         $categorias = Categoria::all();
-        return view('producto.create')->with('categorias', $categorias);
+        return view('producto.create')->with('categorias', $categorias)->with('activeProductos', 'active');
     }
 
     /**
@@ -68,6 +68,8 @@ class ProductoController extends Controller
 
         $productos->save();
 
+        session()->flash('titulo', '¡Agregado!');
+        session()->flash('message', 'Nuevo producto agregado correctamente.');        
         return redirect('/productos');
     }
 
@@ -95,7 +97,7 @@ class ProductoController extends Controller
         $categorias = Categoria::all();
         $producto = Producto::find($id);
 
-        return view('producto.edit')->with('categorias', $categorias)->with('producto', $producto);
+        return view('producto.edit')->with('categorias', $categorias)->with('producto', $producto)->with('activeProductos', 'active');
     }
 
     /**
@@ -121,6 +123,8 @@ class ProductoController extends Controller
 
         $producto->save();
 
+        session()->flash('titulo', '¡Editado!');
+        session()->flash('message', 'Producto editado correctamente');
         return redirect('/productos');
     }
 
@@ -136,6 +140,9 @@ class ProductoController extends Controller
 
         $producto = Producto::find($id);
         $producto->delete();
+
+        session()->flash('titulo', '¡Eliminado!');
+        session()->flash('message', 'Producto eliminado correctamente.');
         return redirect('/productos');
     }
 }

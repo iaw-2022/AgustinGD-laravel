@@ -27,19 +27,21 @@
                     <i class="fas fa-fw fa-cubes "></i><p>Productos</p>
                 </a>
                 </li>
-
+                @can('viewAny', App\Models\Categoria::class)
                 <li  class="nav-item">
                 <a class="nav-link @isset($activeCategorias) {{$activeCategorias}} @endisset" href="/categorias">
                     <i class="fas fa-fw fa-tags "></i><p>Categorias</p>
                 </a>
                 </li>
-                
+                @endcan
+                @can('viewAny', App\Models\User::class)
                 <li  class="nav-header">ADMINISTRAR USUARIOS</li>
                 <li  class="nav-item">
                 <a class="nav-link @isset($activeUsers) {{$activeUsers}} @endisset" href="/users">
                     <i class="fas fa-fw fa-users "></i><p>Usuarios</p>
                 </a>
                 </li>
+                @endcan
             </ul>
         </nav>
     </div>
