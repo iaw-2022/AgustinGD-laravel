@@ -46,7 +46,7 @@ class SeederTablaCategoria extends Seeder
 
         DB::table('categorias')->insert([
             'nombre' => 'Organos',
-            'descripcion' => 'Gracias por la imagen mental :)',
+            'descripcion' => 'Mejor adentro que afuera',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
