@@ -14,7 +14,7 @@
         <thead class="bg-primary text-white">
             <tr>
             <th scope="col">Categoria</th>
-            <th scope="col" >Disponibilidad</th>
+            <th scope="col" class="esconder-tabla">Disponibilidad</th>
             <th scope="col">Nombre</th>
             <th scope="col" class="esconder-tabla">Descripción</th>
             <th scope="col" class="esconder-tabla">Precio/Unidad</th>
@@ -32,9 +32,9 @@
                     <td class="name-overflow">{{$producto->categoria->nombre}}</td>
 
                     @if($producto->disponible)
-                        <td class="p-3 mb-2 bg-success text-white">Disponible</td>
+                        <td class="p-3 mb-2 bg-success text-white esconder-tabla">Disponible</td>
                     @else
-                        <td class="p-3 mb-2 bg-danger text-white">No Disponible</td>
+                        <td class="p-3 mb-2 bg-danger text-white esconder-tabla">No Disponible</td>
                     @endif
                     <td>{{$producto->nombre}}</td>
                     <td class="esconder-tabla">{{$producto->descripcion}}</td>
