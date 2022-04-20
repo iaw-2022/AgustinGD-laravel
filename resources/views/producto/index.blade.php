@@ -40,7 +40,7 @@
                     <td class="esconder-tabla">{{$producto->descripcion}}</td>
                     <td class="esconder-tabla">{{$producto->precioPorUnidad}}</td>
                     <td class="esconder-tabla">
-                        <a href="{{$producto->imagen_dir}}">Link</a>
+                        <a href="{{$producto->imagen_dir}}" target="_blank" rel="noopener noreferrer">Link</a>
                     </td>                    
                     @can('viewTimeStamps', App\Models\Producto::class)
                     <td class="esconder-tabla">{{$producto->updated_at}}</td>
