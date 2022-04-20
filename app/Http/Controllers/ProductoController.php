@@ -69,7 +69,8 @@ class ProductoController extends Controller
         $productos->save();
 
         session()->flash('titulo', '¡Agregado!');
-        session()->flash('message', 'Nuevo producto agregado correctamente.');        
+        session()->flash('message', 'Nuevo producto agregado correctamente.');
+        session()->flash('status', 'success');        
         return redirect('/productos');
     }
 
@@ -125,6 +126,7 @@ class ProductoController extends Controller
 
         session()->flash('titulo', '¡Editado!');
         session()->flash('message', 'Producto editado correctamente');
+        session()->flash('status', 'success');
         return redirect('/productos');
     }
 
@@ -143,6 +145,7 @@ class ProductoController extends Controller
 
         session()->flash('titulo', '¡Eliminado!');
         session()->flash('message', 'Producto eliminado correctamente.');
+        session()->flash('status', 'success');
         return redirect('/productos');
     }
 }

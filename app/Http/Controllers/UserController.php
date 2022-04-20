@@ -48,7 +48,8 @@ class UserController extends Controller
         $this->authorize('create', User::class);
 
         session()->flash('titulo', '¡Agregado!');
-        session()->flash('message', 'Nuevo usuaro agregado correctamente.');        
+        session()->flash('message', 'Nuevo usuario agregado correctamente.');
+        session()->flash('status', 'success');        
         return redirect('/users');
     }
 
@@ -98,6 +99,7 @@ class UserController extends Controller
 
         session()->flash('titulo', '¡Editado!');
         session()->flash('message', 'Usuario editado correctamente');
+        session()->flash('status', 'success');
         return redirect('/users');
     }
 
@@ -115,6 +117,7 @@ class UserController extends Controller
         
         session()->flash('titulo', '¡Eliminado!');
         session()->flash('message', 'Usuario eliminado correctamente.');
+        session()->flash('status', 'success');
         return redirect('/users');
     }
 }

@@ -68,6 +68,6 @@
     @include('componente.boton-eliminar-script')
 
     @if (session()->has('message'))
-        @include('componente.alerta-exito')
+        @include('componente.alerta')
     @endif 
 @stop
