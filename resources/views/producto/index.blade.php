@@ -13,7 +13,6 @@
     <table id="productos" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
         <thead class="bg-primary text-white">
             <tr>
-            <th scope="col">id</th>
             <th scope="col">Categoria</th>
             <th scope="col">Disponibilidad</th>
             <th scope="col">Nombre</th>
@@ -30,7 +29,6 @@
         <tbody>
             @foreach ($productos as $producto)
                 <tr>
-                    <td>{{$producto->id}}</td>
                     <td>{{$producto->categoria->nombre}}</td>
                     @if($producto->disponible)
                         <td class="p-3 mb-2 bg-success text-white">Disponible</td>

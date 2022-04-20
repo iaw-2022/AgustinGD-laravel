@@ -13,7 +13,6 @@
     <table id="categorias" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
         <thead class="bg-primary text-white">
             <tr>
-            <th scope="col">id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Descripcion</th>
             @can('viewTimeStamps', App\Models\Categoria::class)
@@ -26,7 +25,6 @@
         <tbody>
             @foreach ($categorias as $categoria)
                 <tr>
-                    <td>{{$categoria->id}}</td>
                     <td>{{$categoria->nombre}}</td>
                     <td>{{$categoria->descripcion}}</td>
                     @can('viewTimeStamps', App\Models\Categoria::class)

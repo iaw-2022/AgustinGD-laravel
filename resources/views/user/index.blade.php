@@ -13,7 +13,6 @@
     <table id="users" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
         <thead class="bg-primary text-white">
             <tr>
-            <th scope="col">id</th>
             <th scope="col">Rol</th>
             <th scope="col">Nombre</th>
             <th scope="col">Email</th>            
@@ -25,7 +24,6 @@
         <tbody>
             @foreach ($users as $user)
                 <tr>
-                    <td>{{$user->id}}</td>
                     <td>{{$user->rol->nombre}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
