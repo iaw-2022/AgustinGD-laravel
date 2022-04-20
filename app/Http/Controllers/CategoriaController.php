@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Categoria;
 use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 
 class CategoriaController extends Controller
 {
@@ -57,7 +58,8 @@ class CategoriaController extends Controller
         $categorias->save();
 
         session()->flash('titulo', '¡Agregado!');
-        session()->flash('message', 'Nueva categoria agregada correctamente.');        
+        session()->flash('message', 'Nueva categoria agregada correctamente.');
+        session()->flash('status', 'success');        
         return redirect('/categorias');
     }
 
@@ -106,6 +108,7 @@ class CategoriaController extends Controller
 
         session()->flash('titulo', '¡Editado!');
         session()->flash('message', 'Categoria editada correctamente');
+        session()->flash('status', 'success');
         return redirect('/categorias');
     }
 
@@ -120,10 +123,22 @@ class CategoriaController extends Controller
         $this->authorize('delete', Categoria::class);
 
         $categoria = Categoria::find($id);
-        $categoria->delete();
 
-        session()->flash('titulo', '¡Eliminado!');
-        session()->flash('message', 'Categoria eliminada correctamente.');
+        try { 
+            $categoria->delete();
+            $titulo = '¡Eliminado!';
+            $message = 'Categoria eliminada correctamente.';
+            $status = 'success';
+        } catch(QueryException $ex){
+            $titulo = '¡Error!';
+            $message = 'No se puede eliminar una categoria en uso';
+            $status = 'error';
+        }
+        
+
+        session()->flash('titulo', $titulo);
+        session()->flash('message', $message);
+        session()->flash('status', $status);
         return redirect('/categorias');
     }
 }

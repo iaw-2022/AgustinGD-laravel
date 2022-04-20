@@ -1,6 +1,7 @@
 <?php
     $titulo = session('titulo');
     $message = session('message');
+    $status = session('status');
 ?>
 <script>
 const swalWithBootstrapButtons = Swal.mixin({
@@ -13,10 +14,11 @@ const swalWithBootstrapButtons = Swal.mixin({
 
  var titulo = "<?= $titulo ?>";
  var message = "<?= $message ?>";
+ var status = "<?= $status ?>";
  
  swalWithBootstrapButtons.fire(
       titulo,
       message,
-      'success'
+      status
     );
 </script>
