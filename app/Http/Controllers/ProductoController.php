@@ -82,7 +82,10 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+        $this->authorize('viewAny', Producto::class);
+        $producto = Producto::find($id);
+
+        return view('producto.show')->with('producto', $producto)->with('activeProductos', 'active');
     }
 
     /**

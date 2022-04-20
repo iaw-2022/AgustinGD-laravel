@@ -14,14 +14,14 @@
         <thead class="bg-primary text-white">
             <tr>
             <th scope="col">Categoria</th>
-            <th scope="col">Disponibilidad</th>
+            <th scope="col" >Disponibilidad</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Precio/Unidad</th>
-            <th scope="col">Imagen</th>
+            <th scope="col" class="esconder-tabla">Descripción</th>
+            <th scope="col" class="esconder-tabla">Precio/Unidad</th>
+            <th scope="col" class="esconder-tabla">Imagen</th>
             @can('viewTimeStamps', App\Models\Producto::class)
-            <th scope="col">Actualizado</th>
-            <th scope="col">Creado</th>
+            <th scope="col" class="esconder-tabla">Actualizado</th>
+            <th scope="col" class="esconder-tabla">Creado</th>
             @endcan
             <th scope="col">Acciones</th>
             </tr>
@@ -29,21 +29,30 @@
         <tbody>
             @foreach ($productos as $producto)
                 <tr>
-                    <td>{{$producto->categoria->nombre}}</td>
+                    <td class="name-overflow">{{$producto->categoria->nombre}}</td>
+
                     @if($producto->disponible)
                         <td class="p-3 mb-2 bg-success text-white">Disponible</td>
                     @else
                         <td class="p-3 mb-2 bg-danger text-white">No Disponible</td>
                     @endif
                     <td>{{$producto->nombre}}</td>
-                    <td>{{$producto->descripcion}}</td>
-                    <td>{{$producto->precioPorUnidad}}</td>
-                    <td>{{$producto->imagen_dir}}</td>
+                    <td class="esconder-tabla">{{$producto->descripcion}}</td>
+                    <td class="esconder-tabla">{{$producto->precioPorUnidad}}</td>
+                    <td class="esconder-tabla">
+                        <a href="{{$producto->imagen_dir}}">Link</a>
+                    </td>                    
                     @can('viewTimeStamps', App\Models\Producto::class)
-                    <td>{{$producto->updated_at}}</td>
-                    <td>{{$producto->created_at}}</td>
+                    <td class="esconder-tabla">{{$producto->updated_at}}</td>
+                    <td class="esconder-tabla">{{$producto->created_at}}</td>
                     @endcan
                     <td>
+                    @can('viewAny', App\Models\Producto::class)
+                    <div class="esconder-boton">
+                        @include('componente.boton-ver', ['elemento' => $producto->id, 'ruta' => 'productos'])
+                    </div>    
+                    @endcan
+
                     @can('update', App\Models\Producto::class)
                         @include('componente.boton-editar', ['elemento' => $producto->id, 'ruta' => 'productos'])    
                     @endcan
@@ -62,6 +71,24 @@
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet"></link>
+    <style>
+        @media (max-width: 1400px) {
+            .esconder-tabla{
+                display: none;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .esconder-boton{
+                display: none;
+            }
+        }
+
+        td{
+            word-wrap: break-word;
+            max-width: 100px;
+        }   
+    </style>  
 @stop
 
 @section('js')
