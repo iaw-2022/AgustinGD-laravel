@@ -13,39 +13,25 @@
     <table id="productos" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
         <thead class="bg-primary text-white">
             <tr>
-            <th scope="col">Categoria</th>
-            <th scope="col" class="esconder-tabla">Disponibilidad</th>
             <th scope="col">Nombre</th>
-            <th scope="col" class="esconder-tabla">Descripción</th>
+            <th scope="col" class="esconder-tabla">Disponibilidad</th>
+            <th scope="col">Categoria</th>
             <th scope="col" class="esconder-tabla">Precio/Unidad</th>
-            <th scope="col" class="esconder-tabla">Imagen</th>
-            @can('viewTimeStamps', App\Models\Producto::class)
-            <th scope="col" class="esconder-tabla">Actualizado</th>
-            <th scope="col" class="esconder-tabla">Creado</th>
-            @endcan
             <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($productos as $producto)
                 <tr>
-                    <td class="name-overflow">{{$producto->categoria->nombre}}</td>
-
+                    
+                    <td>{{$producto->nombre}}</td>
                     @if($producto->disponible)
                         <td class="p-3 mb-2 bg-success text-white esconder-tabla">Disponible</td>
                     @else
                         <td class="p-3 mb-2 bg-danger text-white esconder-tabla">No Disponible</td>
                     @endif
-                    <td>{{$producto->nombre}}</td>
-                    <td class="esconder-tabla">{{$producto->descripcion}}</td>
+                    <td class="name-overflow">{{$producto->categoria->nombre}}</td>
                     <td class="esconder-tabla">{{$producto->precioPorUnidad}}</td>
-                    <td class="esconder-tabla">
-                        <a href="{{$producto->imagen_dir}}" target="_blank" rel="noopener noreferrer">Link</a>
-                    </td>
-                    @can('viewTimeStamps', App\Models\Producto::class)
-                    <td class="esconder-tabla">{{$producto->updated_at}}</td>
-                    <td class="esconder-tabla">{{$producto->created_at}}</td>
-                    @endcan
                     <td class="text-center">
                     @can('viewAny', App\Models\Producto::class)
                         @include('componente.boton-ver', ['elemento' => $producto->id, 'ruta' => 'productos'])    
@@ -70,19 +56,20 @@
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet"></link>
     <style>
-        @media (max-width: 1400px) {
+        @media (max-width: 768px) {
             .esconder-tabla{
                 display: none;
             }
         }
+        
         td{
             word-wrap: break-word;
             max-width: 100px;
         }
         
         .boton-accion-size {
-            height: 25px; 
-            width: 25px;
+            height: 23px; 
+            width: 23px;
         }
     </style>  
 @stop
