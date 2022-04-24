@@ -14,23 +14,23 @@
         <thead class="bg-primary text-white">
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col" class="esconder-tabla">Disponibilidad</th>
+                <th scope="col" class="esconder-modo-celular">Disponibilidad</th>
                 <th scope="col">Categoria</th>
-                <th scope="col" class="esconder-tabla">Precio/Unidad</th>
+                <th scope="col" class="esconder-modo-celular">Precio/Unidad</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($productos as $producto)
                 <tr>                    
-                    <td>{{$producto->nombre}}</td>
+                    <td class="table-max-width">{{$producto->nombre}}</td>
                     @if($producto->disponible)
-                        <td class="p-3 mb-2 bg-success text-white esconder-tabla">Disponible</td>
+                        <td class="p-3 mb-2 bg-success text-white esconder-modo-celular">Disponible</td>
                     @else
-                        <td class="p-3 mb-2 bg-danger text-white esconder-tabla">No Disponible</td>
+                        <td class="p-3 mb-2 bg-danger text-white esconder-modo-celular">No Disponible</td>
                     @endif
-                    <td class="name-overflow">{{$producto->categoria->nombre}}</td>
-                    <td class="esconder-tabla">${{$producto->precioPorUnidad}}</td>
+                    <td class="table-max-width">{{$producto->categoria->nombre}}</td>
+                    <td class="esconder-modo-celular">${{$producto->precioPorUnidad}}</td>
                     <td class="text-center">
                     @can('viewAny', App\Models\Producto::class)
                         @include('componente.boton-ver', ['elemento' => $producto->id, 'ruta' => 'productos'])    
@@ -53,13 +53,16 @@
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet"></link>
     <style>
         @media (max-width: 768px) {
-            .esconder-tabla{
+            .esconder-modo-celular{
                 display: none;
             }
         }
 
         td{
             word-wrap: break-word;
+        }
+
+        .table-max-width{
             max-width: 100px;
         }
         
