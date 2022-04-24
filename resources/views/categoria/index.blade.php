@@ -15,10 +15,6 @@
             <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Descripcion</th>
-            @can('viewTimeStamps', App\Models\Categoria::class)
-            <th scope="col">Actualizado</th>
-            <th scope="col">Creado</th>
-            @endcan
             <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -27,15 +23,13 @@
                 <tr>
                     <td>{{$categoria->nombre}}</td>
                     <td>{{$categoria->descripcion}}</td>
+                    <td class="text-center">
                     @can('viewTimeStamps', App\Models\Categoria::class)
-                    <td>{{$categoria->updated_at}}</td>
-                    <td>{{$categoria->created_at}}</td>
+                        @include('componente.boton-ver', ['elemento' => $categoria->id, 'ruta' => 'categorias'])    
                     @endcan
-                    <td>
                     @can('update', App\Models\Categoria::class)
                         @include('componente.boton-editar', ['elemento' => $categoria->id, 'ruta' => 'categorias']) 
                     @endcan
-
                     @can('delete', App\Models\Categoria::class)
                         @include('componente.boton-eliminar', ['elemento' => $categoria->id, 'ruta' => 'categorias.destroy'])  
                     @endcan
@@ -50,6 +44,20 @@
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet"></link>
+    <style>
+        td{
+            word-wrap: break-word;
+        }
+
+        .table-max-width{
+            max-width: 100px;
+        }
+        
+        .boton-accion-size {
+            height: 23px; 
+            width: 23px;
+        }
+    </style> 
 @stop
 
 @section('js')

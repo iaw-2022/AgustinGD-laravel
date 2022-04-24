@@ -71,7 +71,10 @@ class CategoriaController extends Controller
      */
     public function show($id)
     {
-        //
+        $this->authorize('viewAny', Categoria::class);
+        $categoria = Categoria::find($id);
+
+        return view('categoria.show')->with('categoria', $categoria)->with('activeCategorias', 'active');
     }
 
     /**
