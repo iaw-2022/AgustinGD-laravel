@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('categoria_id');
             $table->boolean('disponible');
             $table->string('nombre', 50);
             $table->string('descripcion', 255);
