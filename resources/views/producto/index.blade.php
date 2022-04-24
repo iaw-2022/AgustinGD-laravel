@@ -13,17 +13,16 @@
     <table id="productos" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
         <thead class="bg-primary text-white">
             <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col" class="esconder-tabla">Disponibilidad</th>
-            <th scope="col">Categoria</th>
-            <th scope="col" class="esconder-tabla">Precio/Unidad</th>
-            <th scope="col">Acciones</th>
+                <th scope="col">Nombre</th>
+                <th scope="col" class="esconder-tabla">Disponibilidad</th>
+                <th scope="col">Categoria</th>
+                <th scope="col" class="esconder-tabla">Precio/Unidad</th>
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($productos as $producto)
-                <tr>
-                    
+                <tr>                    
                     <td>{{$producto->nombre}}</td>
                     @if($producto->disponible)
                         <td class="p-3 mb-2 bg-success text-white esconder-tabla">Disponible</td>
@@ -36,11 +35,9 @@
                     @can('viewAny', App\Models\Producto::class)
                         @include('componente.boton-ver', ['elemento' => $producto->id, 'ruta' => 'productos'])    
                     @endcan
-
                     @can('update', App\Models\Producto::class)
                         @include('componente.boton-editar', ['elemento' => $producto->id, 'ruta' => 'productos'])    
                     @endcan
-
                     @can('delete', App\Models\Producto::class) 
                         @include('componente.boton-eliminar', ['elemento' => $producto->id, 'ruta' => 'productos.destroy'])                 
                     @endcan                    
@@ -48,7 +45,6 @@
                 </tr>            
             @endforeach
         </tbody>
-
     </table>
 @stop
 
@@ -80,11 +76,11 @@
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 
     <script>
-    $(document).ready(function() {
-        $('#productos').dataTable( {
-            "lengthMenu": [[-1,5,10,50,100], ["All",5,10,50,100]]
+        $(document).ready(function() {
+            $('#productos').dataTable( {
+                "lengthMenu": [[-1,5,10,50,100], ["All",5,10,50,100]]
+            } );
         } );
-    } );
     </script>
 
     @include('componente.boton-eliminar-script')
