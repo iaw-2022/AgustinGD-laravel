@@ -41,7 +41,7 @@
             <label class="form-label">Imagen</label>
             <input type="text" class="form-control no-gray" value="{{$producto->imagen_dir}}" readonly>
         </div>
-        @can('viewAny', App\Models\Producto::class)
+        @can('viewTimeStamps', App\Models\Producto::class)
             <div class="col-6">
                 <label class="form-label">Creado</label>
                 <input type="text" class="form-control no-gray" value="{{$producto->updated_at}}" readonly>
