@@ -42,17 +42,26 @@
                     </li>
                 @endcanany
 
-                <li  class="nav-header">ADMINISTRAR CLIENTES</li>
+                @canany(['viewAny'], App\Models\Cliente::class)               
+                    <li  class="nav-header">ADMINISTRAR CLIENTES</li>
+                @elsecanany(['viewAny'], App\Models\Pedido::class) 
+                    <li  class="nav-header">ADMINISTRAR CLIENTES</li>
+                @endcanany
+
+                @canany(['viewAny'], App\Models\Cliente::class)  
                 <li  class="nav-item">
                     <a class="nav-link @isset($activeClientes) {{$activeClientes}} @endisset" href="/clientes">
                         <i class="fas fa-fw fa-child "></i><p> Clientes</p>
                     </a>
                 </li>
+                @endcanany
+                @canany(['viewAny'], App\Models\Pedido::class) 
                 <li  class="nav-item">
                     <a class="nav-link @isset($activePedidos) {{$activePedidos}} @endisset" href="/pedidos">
                         <i class="fas fa-fw fa-envelope "></i><p> Pedidos</p>
                     </a>
                 </li>
+                @endcanany
 
                 @canany(['viewAny'], App\Models\User::class) 
                     <li  class="nav-header">ADMINISTRAR USUARIOS</li>
