@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li  class="nav-item">
-                    <a class="nav-link @isset($activeClientes) {{$activeClientes}} @endisset" href="/pedidos">
+                    <a class="nav-link @isset($activeClientes) {{$activePedidos}} @endisset" href="/pedidos">
                         <i class="fas fa-fw fa-envelope "></i><p> Pedidos</p>
                     </a>
                 </li>
