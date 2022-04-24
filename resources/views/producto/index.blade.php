@@ -41,16 +41,14 @@
                     <td class="esconder-tabla">{{$producto->precioPorUnidad}}</td>
                     <td class="esconder-tabla">
                         <a href="{{$producto->imagen_dir}}" target="_blank" rel="noopener noreferrer">Link</a>
-                    </td>                    
+                    </td>
                     @can('viewTimeStamps', App\Models\Producto::class)
                     <td class="esconder-tabla">{{$producto->updated_at}}</td>
                     <td class="esconder-tabla">{{$producto->created_at}}</td>
                     @endcan
-                    <td>
+                    <td class="text-center">
                     @can('viewAny', App\Models\Producto::class)
-                    <div class="esconder-boton">
-                        @include('componente.boton-ver', ['elemento' => $producto->id, 'ruta' => 'productos'])
-                    </div>    
+                        @include('componente.boton-ver', ['elemento' => $producto->id, 'ruta' => 'productos'])    
                     @endcan
 
                     @can('update', App\Models\Producto::class)
@@ -77,17 +75,15 @@
                 display: none;
             }
         }
-
-        @media (min-width: 1400px) {
-            .esconder-boton{
-                display: none;
-            }
-        }
-
         td{
             word-wrap: break-word;
             max-width: 100px;
-        }   
+        }
+        
+        .boton-accion-size {
+            height: 25px; 
+            width: 25px;
+        }
     </style>  
 @stop
 
