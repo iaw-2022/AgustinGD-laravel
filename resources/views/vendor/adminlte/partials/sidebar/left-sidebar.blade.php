@@ -30,14 +30,14 @@
                 @canany(['viewAny'], App\Models\Producto::class)  
                     <li  class="nav-item">
                         <a class="nav-link @isset($activeProductos) {{$activeProductos}} @endisset" href="/productos">
-                            <i class="fas fa-fw fa-cubes "></i><p>Productos</p>
+                            <i class="fas fa-fw fa-cubes "></i><p> Productos</p>
                         </a>
                     </li>
                 @endcanany
                 @canany(['viewAny'], App\Models\Categoria::class) 
                     <li  class="nav-item">
                         <a class="nav-link @isset($activeCategorias) {{$activeCategorias}} @endisset" href="/categorias">
-                            <i class="fas fa-fw fa-tags "></i><p>Categorias</p>
+                            <i class="fas fa-fw fa-tags "></i><p> Categorias</p>
                         </a>
                     </li>
                 @endcanany
@@ -45,12 +45,12 @@
                 <li  class="nav-header">ADMINISTRAR CLIENTES</li>
                 <li  class="nav-item">
                     <a class="nav-link @isset($activeClientes) {{$activeClientes}} @endisset" href="/clientes">
-                        <i class="fas fa-fw fa-child "></i><p>Clientes</p>
+                        <i class="fas fa-fw fa-child "></i><p> Clientes</p>
                     </a>
                 </li>
                 <li  class="nav-item">
                     <a class="nav-link @isset($activeClientes) {{$activeClientes}} @endisset" href="/pedidos">
-                        <i class="fas fa-fw fa-envelope "></i><p>Pedidos</p>
+                        <i class="fas fa-fw fa-envelope "></i><p> Pedidos</p>
                     </a>
                 </li>
 
@@ -60,7 +60,7 @@
                 @canany(['viewAny'], App\Models\User::class) 
                     <li  class="nav-item">
                         <a class="nav-link @isset($activeUsers) {{$activeUsers}} @endisset" href="/users">
-                            <i class="fas fa-fw fa-users "></i><p>Usuarios</p>
+                            <i class="fas fa-fw fa-users "></i><p> Usuarios</p>
                         </a>
                     </li>
                 @endcanany
