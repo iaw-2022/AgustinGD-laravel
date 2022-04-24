@@ -71,17 +71,4 @@
 @stop
 
 @section('js')
-<!-- 
-
-<div>
-    <ul class="list-group list-group-vertical">
-    Nombre
-    <li class="list-group-item">An item</li>
-    Descripcion
-    <li class="list-group-item">A second item</li>
-    Hola
-    <li class="list-group-item">
-    </li>
-</div>
--->
 @stop
