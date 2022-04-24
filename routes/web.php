@@ -28,3 +28,4 @@ Route::resource('productos', 'App\Http\Controllers\ProductoController');
 Route::resource('categorias', 'App\Http\Controllers\CategoriaController');
 Route::resource('users', 'App\Http\Controllers\UserController');
 Route::resource('clientes', 'App\Http\Controllers\ClienteController');
+Route::resource('pedidos', 'App\Http\Controllers\PedidoController');
