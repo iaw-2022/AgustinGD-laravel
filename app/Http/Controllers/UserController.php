@@ -59,9 +59,12 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        //
+        $this->authorize('viewAny', User::class);
+        $user = User::find($id);
+
+        return view('user.show')->with('user', $user)->with('activeUsers', 'active');
     }
 
     /**
