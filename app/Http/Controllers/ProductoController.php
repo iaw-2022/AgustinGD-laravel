@@ -23,10 +23,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('viewAny', Producto::class)) {
-            Auth::logout();
-            abort(403, "Te deben asignar un Rol para acceder");
-        }
+        $this->authorize('viewAny', Producto::class);
 
         $productos = Producto::all();
         return view('producto.index')->with('productos', $productos)->with('activeProductos', 'active');

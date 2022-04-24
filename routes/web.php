@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\ProductoController::class, 'index'])->name('home');
+Route::get('/home', function(){
+    return view('home');
+})->middleware('auth');;
 
 Route::resource('productos', 'App\Http\Controllers\ProductoController');
 Route::resource('categorias', 'App\Http\Controllers\CategoriaController');
