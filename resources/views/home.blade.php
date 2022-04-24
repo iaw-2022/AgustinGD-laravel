@@ -7,7 +7,10 @@
 @stop
 
 @section('content')
-    <p>Hola</p>
+<div class="text-center">
+    <p>(Usuario promedio que disfruta esta Web App)</p>
+    <img src="https://c.tenor.com/TLhWkKdr770AAAAd/giga-chad.gif" alt="this slowpoke moves" height="500" data-width="50%" />
+</div>
 @stop
 
 @section('css')
