@@ -24,7 +24,6 @@
             <label class="form-label">Categoria</label>
             <input type="text" class="form-control no-gray" value="{{$producto->categoria->nombre}}" readonly>
         </div>
-
         <div class="col-4 col-md-4">
             <label class="form-label">Precio por Unidad</label>
             <input type="text" class="form-control no-gray" value="{{$producto->precioPorUnidad}}" readonly>
@@ -53,8 +52,7 @@
         @endcan 
         <div class="col-12">
             <a href="/productos" class="btn btn-secondary">Volver</a>
-        </div>
-         
+        </div>         
     </div>
 @stop
 
@@ -62,8 +60,6 @@
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        
-
         .form-control[readonly].no-gray{
             background-color:white !important;
         }
