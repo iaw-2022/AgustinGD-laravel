@@ -31,7 +31,7 @@
                         <td class="p-3 mb-2 bg-danger text-white esconder-tabla">No Disponible</td>
                     @endif
                     <td class="name-overflow">{{$producto->categoria->nombre}}</td>
-                    <td class="esconder-tabla">{{$producto->precioPorUnidad}}</td>
+                    <td class="esconder-tabla">${{$producto->precioPorUnidad}}</td>
                     <td class="text-center">
                     @can('viewAny', App\Models\Producto::class)
                         @include('componente.boton-ver', ['elemento' => $producto->id, 'ruta' => 'productos'])    
@@ -61,7 +61,7 @@
                 display: none;
             }
         }
-        
+
         td{
             word-wrap: break-word;
             max-width: 100px;
