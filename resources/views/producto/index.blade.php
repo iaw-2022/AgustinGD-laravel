@@ -23,13 +23,13 @@
         <tbody>
             @foreach ($productos as $producto)
                 <tr>                    
-                    <td class="table-max-width">{{$producto->nombre}}</td>
+                    <td class="columna-max-width">{{$producto->nombre}}</td>
                     @if($producto->disponible)
                         <td class="p-3 mb-2 bg-success text-white esconder-modo-celular">Disponible</td>
                     @else
                         <td class="p-3 mb-2 bg-danger text-white esconder-modo-celular">No Disponible</td>
                     @endif
-                    <td class="table-max-width">{{$producto->categoria->nombre}}</td>
+                    <td class="columna-max-width">{{$producto->categoria->nombre}}</td>
                     <td class="esconder-modo-celular">${{$producto->precioPorUnidad}}</td>
                     <td class="text-center">
                     @can('viewAny', App\Models\Producto::class)
@@ -62,7 +62,7 @@
             word-wrap: break-word;
         }
 
-        .table-max-width{
+        .columna-max-width{
             max-width: 100px;
         }
         
