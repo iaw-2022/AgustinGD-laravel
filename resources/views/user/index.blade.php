@@ -26,7 +26,7 @@
                     <td class="columna-max-width">{{$user->rol->nombre}}</td>                    
                     <td class = "esconder-modo-celular">{{$user->email}}</td>
                     <td class="text-center">
-                    @can('viewAny', App\Models\Producto::class)
+                    @can('viewAny', App\Models\User::class)
                         @include('componente.boton-ver', ['elemento' => $user->id, 'ruta' => 'users'])    
                     @endcan
                     @can('update', App\Models\User::class)
