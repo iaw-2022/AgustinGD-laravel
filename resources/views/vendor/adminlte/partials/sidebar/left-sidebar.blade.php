@@ -42,6 +42,18 @@
                     </li>
                 @endcanany
 
+                <li  class="nav-header">ADMINISTRAR CLIENTES</li>
+                <li  class="nav-item">
+                    <a class="nav-link @isset($activeClientes) {{$activeClientes}} @endisset" href="/clientes">
+                        <i class="fas fa-fw fa-child "></i><p>Clientes</p>
+                    </a>
+                </li>
+                <li  class="nav-item">
+                    <a class="nav-link @isset($activeClientes) {{$activeClientes}} @endisset" href="/pedidos">
+                        <i class="fas fa-fw fa-envelope "></i><p>Pedidos</p>
+                    </a>
+                </li>
+
                 @canany(['viewAny'], App\Models\User::class) 
                     <li  class="nav-header">ADMINISTRAR USUARIOS</li>
                 @endcanany
