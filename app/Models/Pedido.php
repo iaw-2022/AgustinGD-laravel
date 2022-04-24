@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\PedidoProducto;
 
 class Pedido extends Model
 {
     use HasFactory;
 
-    public function productos(){
-        return $this->hasMany(Producto::class);
+    public function pedidos(){
+        return $this->hasMany(PedidoProducto::class);
     }
 
     public function cliente(){
-        return $this->hasMany(Cliente::class);
+        return $this->belongsTo(Cliente::class);
     }
 }

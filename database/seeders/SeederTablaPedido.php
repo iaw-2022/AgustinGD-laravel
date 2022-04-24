@@ -16,9 +16,9 @@ class SeederTablaPedido extends Seeder
      */
     public function run()
     {
-        $this->crear(1,1,5);
-        $this->crear(1,2,3);
-        $this->crear(1,3,7);
+        $nuevoPedido = $this->crear(1,1,5);
+            $this->agregarProductoAPedido($nuevoPedido,2,3);
+            $this->agregarProductoAPedido($nuevoPedido,3,7);
 
         $this->crear(2,1,5);
         $this->crear(2,6,10);
@@ -26,23 +26,34 @@ class SeederTablaPedido extends Seeder
         $this->crear(3,8,2);
         $this->crear(3,8,2);
 
-        $this->crear(4,1,100);
-        $this->crear(4,2,100);
-        $this->crear(4,3,100);
-        $this->crear(4,4,100);
-        $this->crear(4,5,100);
-        $this->crear(4,6,100);
-        $this->crear(4,7,100);
-        $this->crear(4,8,100);
-        $this->crear(4,9,100);
+        $nuevoPedido = $this->crear(4,1,100);
+            $this->agregarProductoAPedido($nuevoPedido,2,100);
+            $this->agregarProductoAPedido($nuevoPedido,3,100);
+            $this->agregarProductoAPedido($nuevoPedido,4,100);
+            $this->agregarProductoAPedido($nuevoPedido,5,100);
+            $this->agregarProductoAPedido($nuevoPedido,6,100);
+            $this->agregarProductoAPedido($nuevoPedido,7,100);
+            $this->agregarProductoAPedido($nuevoPedido,8,100);
+            $this->agregarProductoAPedido($nuevoPedido,9,100);
     }
 
     private function crear($cliente, $producto, $cantidad){
-        DB::table('pedidos')->insert([
+        $pedido = DB::table('pedidos')->insertGetId([
             'cliente_id' => $cliente,
-            'producto_id' => $producto,
-            'cantidad' => $cantidad,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
+
+        $this->agregarProductoAPedido($pedido, $producto, $cantidad);
+        return $pedido;
+    }
+
+    private function agregarProductoAPedido($pedido, $producto, $cantidad){
+        $pedido_id = DB::table('pedido_productos')->insertGetId([
+            'pedido_id' => $pedido,
+            'producto_id' => $producto,
+            'cantidad' => $cantidad
+        ]);
+
+        
     }
 }
