@@ -10,8 +10,8 @@ class Pedido extends Model
 {
     use HasFactory;
 
-    public function pedidos(){
-        return $this->hasMany(PedidoProducto::class);
+    public function producto(){
+        return $this->belongsTo(Producto::class);
     }
 
     public function cliente(){
