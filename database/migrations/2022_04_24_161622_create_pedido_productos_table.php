@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pedido_id');             
             $table->unsignedBigInteger('producto_id');            
-            $table->integer('cantidad');
+            $table->tinyInteger('cantidad');
         });
     }
 
