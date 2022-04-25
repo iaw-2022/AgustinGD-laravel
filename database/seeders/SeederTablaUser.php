@@ -18,15 +18,6 @@ class SeederTablaUser extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Administrador',
-            'email' => 'administrador@yahoo.org',
-            'password' => bcrypt('iaw2022administrador'),
-            'rol_id' => 1,
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Administrador',
             'email' => 'administrador@administrador.com',
             'password' => bcrypt('123'),
             'rol_id' => 1,
