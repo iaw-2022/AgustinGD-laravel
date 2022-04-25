@@ -16,26 +16,15 @@ class SeederTablaRol extends Seeder
      */
     public function run()
     {
-        DB::table('rols')->insert([
-            'nombre' => 'admin',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear('Administrador');
+        $this->crear('Edicion');
+        $this->crear('Actualizacion');
+        $this->crear('User');
+    }
 
+    private function crear($rol){
         DB::table('rols')->insert([
-            'nombre' => 'edicion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
-
-        DB::table('rols')->insert([
-            'nombre' => 'actualizacion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
-
-        DB::table('rols')->insert([
-            'nombre' => 'user',
+            'nombre' => $rol,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
