@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Models\Rol;
 
 class SeederTablaUser extends Seeder
 {
@@ -20,7 +21,7 @@ class SeederTablaUser extends Seeder
             'name' => 'Administrador',
             'email' => 'administrador@administrador.com',
             'password' => bcrypt('123'),
-            'rol_id' => 1,
+            'rol_id' => Rol::IS_ADMIN,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -29,7 +30,7 @@ class SeederTablaUser extends Seeder
             'name' => 'Editor',
             'email' => 'editor@editor.com',
             'password' => bcrypt('123'),
-            'rol_id' => 2,
+            'rol_id' => Rol::IS_EDITOR,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -38,7 +39,7 @@ class SeederTablaUser extends Seeder
             'name' => 'Actualizador',
             'email' => 'actualizador@actualizador.com',
             'password' => bcrypt('123'),
-            'rol_id' => 3,
+            'rol_id' => Rol::IS_ACTUALIZADOR,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -47,7 +48,7 @@ class SeederTablaUser extends Seeder
             'name' => 'User',
             'email' => 'user@user.com',
             'password' => bcrypt('123'),
-            'rol_id' => 4,
+            'rol_id' => Rol::IS_USER,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
