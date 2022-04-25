@@ -51,6 +51,15 @@ class SeederTablaUser extends Seeder
             'rol_id' => Rol::IS_USER,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);        
+
+        DB::table('users')->insert([
+            'name' => 'Ventas',
+            'email' => 'ventas@ventas.com',
+            'password' => bcrypt('123'),
+            'rol_id' => Rol::IS_VENDEDOR,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }

@@ -20,7 +20,8 @@ class PedidoPolicy
     public function viewAny(User $user)
     {
         return in_array($user->rol_id, [    ROL::IS_ADMIN,
-                                            ROL::IS_EDITOR]);
+                                            ROL::IS_EDITOR,
+                                            ROL::IS_VENDEDOR]);
     }
 
     public function viewTimeStamps(User $user)

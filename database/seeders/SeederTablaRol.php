@@ -18,7 +18,8 @@ class SeederTablaRol extends Seeder
     {
         $this->crear('Administrador');
         $this->crear('Edicion');
-        $this->crear('Actualizacion');
+        $this->crear('Actualizacion');        
+        $this->crear('Ventas');
         $this->crear('User');
     }
 

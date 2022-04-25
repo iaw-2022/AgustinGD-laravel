@@ -20,7 +20,8 @@ class ClientePolicy
     public function viewAny(User $user)
     {
         return in_array($user->rol_id, [    ROL::IS_ADMIN,
-                                            ROL::IS_EDITOR]);
+                                            ROL::IS_EDITOR,
+                                            ROL::IS_VENDEDOR]);
     }
 
     /**

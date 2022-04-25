@@ -21,7 +21,8 @@ class ProductoPolicy
     {
         return in_array($user->rol_id, [    ROL::IS_ADMIN,
                                             ROL::IS_EDITOR,  
-                                            ROL::IS_ACTUALIZADOR]);
+                                            ROL::IS_ACTUALIZADOR,
+                                            ROL::IS_VENDEDOR]);
     }
 
     public function viewTimeStamps(User $user)
