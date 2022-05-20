@@ -16,103 +16,97 @@ class SeederTablaProducto extends Seeder
      */
     public function run()
     {
-        DB::table('productos')->insert([
-            'categoria_id' => '1',
-            'disponible' => true,
-            'nombre' => 'Carne de vaca',
-            'descripcion' => 'creo que es carne roja',
-            'precioPorUnidad' => '100',
-            'imagen_dir' => 'alguna direccion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear(
+            '1',
+            true,
+            'Carne de vaca',
+            'creo que es carne roja',
+            '100',
+            'alguna direccion',
+        );
 
-        DB::table('productos')->insert([
-            'categoria_id' => '1',
-            'disponible' => true,
-            'nombre' => 'Carne de toro',
-            'descripcion' => 'creo que es carne roja',
-            'precioPorUnidad' => '100',
-            'imagen_dir' => 'alguna direccion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear(
+            '1',
+            true,
+            'Carne de toro',
+            'creo que es carne roja',
+            '100',
+            'alguna direccion',
+        );
 
-        DB::table('productos')->insert([
-            'categoria_id' => '1',
-            'disponible' => true,
-            'nombre' => 'Carne de pollo',
-            'descripcion' => 'creo que es carne blanca',
-            'precioPorUnidad' => '100',
-            'imagen_dir' => 'alguna direccion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear(
+            '1',
+            true,
+            'Carne de pollo',
+            'creo que es carne blanca',
+            '100',
+            'alguna direccion',
+        );
 
-        DB::table('productos')->insert([
-            'categoria_id' => '1',
-            'disponible' => true,
-            'nombre' => 'Carne de Gallina',
-            'descripcion' => 'creo que es carne blanca',
-            'precioPorUnidad' => '100',
-            'imagen_dir' => 'alguna direccion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear(
+            '1',
+            true,
+            'Carne de Gallina',
+            'creo que es carne blanca',
+            '100',
+            'alguna direccion',
+        );
 
-        DB::table('productos')->insert([
-            'categoria_id' => '3',
-            'disponible' => true,
-            'nombre' => 'Pepino',
-            'descripcion' => 'Algo verde',
-            'precioPorUnidad' => '200',
-            'imagen_dir' => 'alguna direccion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear(
+            '3',
+            true,
+            'Pepino',
+            'Algo verde',
+            '200',
+            'alguna direccion',
+        );
 
-        DB::table('productos')->insert([
-            'categoria_id' => '3',
-            'disponible' => true,
-            'nombre' => 'Lechuga',
-            'descripcion' => 'Algo verde',
-            'precioPorUnidad' => '200',
-            'imagen_dir' => 'alguna direccion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear(
+            '3',
+            true,
+            'Lechuga',
+            'Algo verde',
+            '200',
+            'alguna direccion',
+        );
 
-        DB::table('productos')->insert([
-            'categoria_id' => '3',
-            'disponible' => true,
-            'nombre' => 'Brocoli',
-            'descripcion' => 'Algo verde',
-            'precioPorUnidad' => '200',
-            'imagen_dir' => 'alguna direccion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear(
+            '3',
+            true,
+            'Brocoli',
+            'Algo verde',
+             '200',
+            'alguna direccion',
+        );
 
-        DB::table('productos')->insert([
-            'categoria_id' => '2',
-            'disponible' => true,
-            'nombre' => 'Leche',
-            'descripcion' => 'creo que es leche blanca',
-            'precioPorUnidad' => '300',
-            'imagen_dir' => 'alguna direccion',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        $this->crear(
+            '2',
+            true,
+            'Leche',
+            'creo que es leche blanca',
+            '300',
+            'alguna direccion',
+        );
 
+        $this->crear(
+            '2',
+            true,
+            'Yogurt Griego',
+            'viene de la Atlantida',
+            '300',
+            'alguna direccion',
+        );
+    }
+
+    private function crear($categoria_id, $disponible, $nombre, $descripcion, $precioPorUnidad , $imagen_dir){
         DB::table('productos')->insert([
-            'categoria_id' => '2',
-            'disponible' => true,
-            'nombre' => 'Yogurt Griego',
-            'descripcion' => 'viene de la Atlantida',
-            'precioPorUnidad' => '300',
-            'imagen_dir' => 'alguna direccion',
+            'categoria_id' => $categoria_id,
+            'disponible' => $disponible,
+            'nombre' => $nombre,
+            'descripcion' => $descripcion,
+            'precioPorUnidad' => $precioPorUnidad,
+            'imagen_dir' => $imagen_dir,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }
