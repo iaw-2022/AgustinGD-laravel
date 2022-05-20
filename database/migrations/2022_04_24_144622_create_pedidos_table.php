@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cliente_id');
             $table->unsignedBigInteger('producto_id');
             $table->integer('cantidad');
+            $table->float('total');
             $table->timestamps();
         });
     }
