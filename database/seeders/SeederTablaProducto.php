@@ -22,7 +22,7 @@ class SeederTablaProducto extends Seeder
             'Carne de vaca',
             'creo que es carne roja',
             '100',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
 
         $this->crear(
@@ -31,7 +31,7 @@ class SeederTablaProducto extends Seeder
             'Carne de toro',
             'creo que es carne roja',
             '100',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
 
         $this->crear(
@@ -40,7 +40,7 @@ class SeederTablaProducto extends Seeder
             'Carne de pollo',
             'creo que es carne blanca',
             '100',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
 
         $this->crear(
@@ -49,7 +49,7 @@ class SeederTablaProducto extends Seeder
             'Carne de Gallina',
             'creo que es carne blanca',
             '100',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
 
         $this->crear(
@@ -58,7 +58,7 @@ class SeederTablaProducto extends Seeder
             'Pepino',
             'Algo verde',
             '200',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
 
         $this->crear(
@@ -67,7 +67,7 @@ class SeederTablaProducto extends Seeder
             'Lechuga',
             'Algo verde',
             '200',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
 
         $this->crear(
@@ -76,7 +76,7 @@ class SeederTablaProducto extends Seeder
             'Brocoli',
             'Algo verde',
              '200',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
 
         $this->crear(
@@ -85,7 +85,7 @@ class SeederTablaProducto extends Seeder
             'Leche',
             'creo que es leche blanca',
             '300',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
 
         $this->crear(
@@ -94,7 +94,7 @@ class SeederTablaProducto extends Seeder
             'Yogurt Griego',
             'viene de la Atlantida',
             '300',
-            'alguna direccion',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
         );
     }
 
