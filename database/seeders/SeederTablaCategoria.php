@@ -18,37 +18,37 @@ class SeederTablaCategoria extends Seeder
         $this->crear(
             'Carnes',
             'Si es musculo es valido.',
-            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1652575869/app-granja/vacas_gelaow.jpg',
         );
 
         $this->crear(
             'Lacteos',
             'Si es de una ubre mejor.',
-            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1652575869/app-granja/vacas_gelaow.jpg',
         );
 
         $this->crear(
             'Vegetales',
             'Los arboles son vegetales.',
-            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1652575869/app-granja/vacas_gelaow.jpg',
         );
 
         $this->crear(
             'Frutas',
             'Fruto comestible de ciertas plantas y árboles, en especial cuando tiene mucha agua y es de sabor dulce.',
-            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1652575869/app-granja/vacas_gelaow.jpg',
         );
 
         $this->crear(
             'Organos',
             'Mejor adentro que afuera.',
-            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1652575869/app-granja/vacas_gelaow.jpg',
         );
 
         $this->crear(
             'Nueces',
             'Categoria favorita de Alvin y las Ardillas.',
-            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1651665859/app-granja/leche_vzix8k.png',
+            'https://res.cloudinary.com/dtkj9tvgw/image/upload/v1652575869/app-granja/vacas_gelaow.jpg',
         );
     }
 
