@@ -61,7 +61,6 @@ class ProductoController extends Controller
         $productos->descripcion = $request->get('inputDescripcion');
         $productos->imagen_dir = $request->get('inputImagen');
         $productos->created_at = Carbon::now()->format('Y-m-d H:i:s');
-        $productos->updated_at = Carbon::now()->format('Y-m-d H:i:s');
 
         $productos->save();
 

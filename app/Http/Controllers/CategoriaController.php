@@ -54,7 +54,6 @@ class CategoriaController extends Controller
         $categoria->descripcion = $request->get('inputDescripcion');        
         $categoria->imagen_dir = $request->get('inputImagen');
         $categoria->created_at = Carbon::now()->format('Y-m-d H:i:s');
-        $categoria->updated_at = Carbon::now()->format('Y-m-d H:i:s');
 
         $categoria->save();
 
