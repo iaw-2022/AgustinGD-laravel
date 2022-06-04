@@ -22,6 +22,10 @@
             <label for="inputCantidad" class="form-label" >Cantidad</label>
             <input type="number" class="form-control" id="inputCantidad" name="inputCantidad" value="{{$pedido->cantidad}}" required>
         </div>
+        <div class="col-12 col-md-12">
+            <label for="inputTotal" class="form-label">Total</label>
+            <input type="number" step="0.01" class="form-control" id="inputTotal" name="inputTotal" value="{{$pedido->total}}" {{$editParcial}}>
+        </div>
         <div class="col-12">
             <a href="/pedidos" class="btn btn-secondary">Cancelar</a>
             <button type="submit" class="btn btn-primary">Guardar</button>

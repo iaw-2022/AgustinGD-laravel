@@ -53,6 +53,7 @@ class PedidoController extends Controller
         $pedido->cliente_id = $request->get('inputClienteID');
         $pedido->producto_id = $request->get('inputProductoID');
         $pedido->cantidad = $request->get('inputCantidad');
+        $pedido->total = $request->get('inputTotal');
         
         try { 
             $pedido->save();
@@ -114,6 +115,7 @@ class PedidoController extends Controller
         $pedido->cliente_id = $request->get('inputClienteID');
         $pedido->producto_id = $request->get('inputProductoID');
         $pedido->cantidad = $request->get('inputCantidad');
+        $pedido->total = $request->get('inputTotal');
         
         try { 
             $pedido->save();

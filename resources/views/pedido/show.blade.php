@@ -24,6 +24,10 @@
             <label class="form-label">Producto</label>
             <input type="text" class="form-control no-gray" value="{{$pedido->producto->nombre}}" readonly>
         </div>
+        <div class="col-12 col-md-12">
+            <label class="form-label">Total</label>
+            <input type="text" class="form-control no-gray" value="{{$pedido->total}}" readonly>
+        </div>
         @can('viewTimeStamps', App\Models\Pedido::class) 
          <div class="col-6">
             <label class="form-label">Creado</label>

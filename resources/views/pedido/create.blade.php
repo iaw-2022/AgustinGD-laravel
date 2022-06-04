@@ -21,6 +21,10 @@
             <label class="form-label" >Cantidad</label>
             <input type="number" class="form-control" name="inputCantidad" required>
         </div>
+        <div class="col-4 col-md-4">
+            <label for="inputTotal" class="form-label">Total</label>
+            <input type="number" step="0.01" class="form-control" id="inputTotal" name="inputTotal" required>
+        </div>
         <div class="col-12">
             <a href="/pedidos" class="btn btn-secondary">Cancelar</a>
             <button type="submit" class="btn btn-primary">Guardar</button>
