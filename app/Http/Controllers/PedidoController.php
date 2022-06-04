@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pedido;
-use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
+use Carbon\Carbon;
 
 class PedidoController extends Controller
 {
@@ -54,6 +54,7 @@ class PedidoController extends Controller
         $pedido->producto_id = $request->get('inputProductoID');
         $pedido->cantidad = $request->get('inputCantidad');
         $pedido->total = $request->get('inputTotal');
+        $pedido->created_at = Carbon::now()->format('Y-m-d H:i:s');
         
         try { 
             $pedido->save();
@@ -116,6 +117,7 @@ class PedidoController extends Controller
         $pedido->producto_id = $request->get('inputProductoID');
         $pedido->cantidad = $request->get('inputCantidad');
         $pedido->total = $request->get('inputTotal');
+        $pedido->updated_at = Carbon::now()->format('Y-m-d H:i:s');
         
         try { 
             $pedido->save();
