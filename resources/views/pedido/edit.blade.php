@@ -10,23 +10,22 @@
     <form class="row g-3" action="/pedidos/{{$pedido->id}}" method="POST">
         @csrf
         @method('PUT')
-        <div class="col-2 col-md-2">
+        <div class="col-12 col-md-12">
             <label for="inputClienteID" class="form-label" >ID_Cliente</label>
             <input type="number" class="form-control" id="inputClienteID" name="inputClienteID" value="{{$pedido->cliente->id}}" required>
         </div>
-        <div class="col-5 col-md-5">
-            <label for="inputCantidad" class="form-label" >Cantidad</label>
-            <input type="number" class="form-control" id="inputCantidad" name="inputCantidad" value="{{$pedido->cantidad}}" required>
-        </div>
-        <div class="col-5 col-md-5">
+        <div class="col-12 col-md-12">
             <label for="inputProductoID" class="form-label" >ID_Producto</label>
             <input type="number" class="form-control" id="inputProductoID" name="inputProductoID" value="{{$pedido->producto->id}}" required>
         </div>
-
-    <div class="col-12">
-        <a href="/pedidos" class="btn btn-secondary">Cancelar</a>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </div>   
+        <div class="col-12 col-md-12">
+            <label for="inputCantidad" class="form-label" >Cantidad</label>
+            <input type="number" class="form-control" id="inputCantidad" name="inputCantidad" value="{{$pedido->cantidad}}" required>
+        </div>
+        <div class="col-12">
+            <a href="/pedidos" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>   
     </form>
 @stop
 
