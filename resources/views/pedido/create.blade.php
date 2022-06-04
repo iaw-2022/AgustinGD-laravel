@@ -21,7 +21,7 @@
             <label class="form-label" >Cantidad</label>
             <input type="number" class="form-control" name="inputCantidad" required>
         </div>
-        <div class="col-4 col-md-4">
+        <div class="col-12 col-md-12">
             <label for="inputTotal" class="form-label">Total</label>
             <input type="number" step="0.01" class="form-control" id="inputTotal" name="inputTotal" required>
         </div>
