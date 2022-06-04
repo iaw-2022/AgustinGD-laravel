@@ -66,11 +66,10 @@
             <label for="inputImagen" class="form-label">Imagen</label>
             <input type="text" class="form-control" id="inputImagen" name="inputImagen" placeholder="pepe.png" maxlength="255" value="{{$producto->imagen_dir}}" required>
         </div>
-
-    <div class="col-12">
-        <a href="/productos" class="btn btn-secondary">Cancelar</a>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </div>   
+        <div class="col-12">
+            <a href="/productos" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>   
     </form>
 @stop
 
