@@ -18,11 +18,14 @@
             <label for="inputDescripcion">Descripción</label>
             <textarea class="form-control" id="inputDescripcion" name="inputDescripcion" rows="3" maxlength="255" required>{{$categoria->descripcion}}</textarea>
         </div>
-
-    <div class="col-12">
-        <a href="/categorias" class="btn btn-secondary">Cancelar</a>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </div>   
+        <div class="col-12">
+            <label for="inputImagen" class="form-label">Imagen</label>
+            <input type="text" class="form-control" id="inputImagen" name="inputImagen" placeholder="pepe.png" maxlength="255" value="{{$categoria->imagen_dir}}" required>
+        </div>
+        <div class="col-12">
+            <a href="/categorias" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>   
     </form>
 @stop
 

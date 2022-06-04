@@ -20,6 +20,10 @@
             <label class="form-label">Descripción</label>
             <textarea class="form-control no-gray"rows="3" readonly>{{$categoria->descripcion}}</textarea>
         </div>
+        <div class="col-12">
+            <label class="form-label">Imagen</label>
+            <input type="text" class="form-control no-gray" value="{{$categoria->imagen_dir}}" readonly>
+        </div>
         @can('viewTimeStamps', App\Models\Categoria::class)
             <div class="col-6">
                 <label class="form-label">Creado</label>

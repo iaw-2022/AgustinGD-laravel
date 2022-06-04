@@ -48,14 +48,15 @@ class CategoriaController extends Controller
     {
         $this->authorize('create', Categoria::class);
 
-        $categorias = new Categoria();
+        $categoria = new Categoria();
 
-        $categorias->nombre = $request->get('inputNombre');
-        $categorias->descripcion = $request->get('inputDescripcion');
-        $categorias->created_at = Carbon::now()->format('Y-m-d H:i:s');
-        $categorias->updated_at = Carbon::now()->format('Y-m-d H:i:s');
+        $categoria->nombre = $request->get('inputNombre');
+        $categoria->descripcion = $request->get('inputDescripcion');        
+        $categoria->imagen_dir = $request->get('inputImagen');
+        $categoria->created_at = Carbon::now()->format('Y-m-d H:i:s');
+        $categoria->updated_at = Carbon::now()->format('Y-m-d H:i:s');
 
-        $categorias->save();
+        $categoria->save();
 
         session()->flash('titulo', '¡Agregado!');
         session()->flash('message', 'Nueva categoria agregada correctamente.');
@@ -105,6 +106,7 @@ class CategoriaController extends Controller
         $categoria = Categoria::find($id);
         $categoria->nombre = $request->get('inputNombre');
         $categoria->descripcion = $request->get('inputDescripcion');
+        $categoria->imagen_dir = $request->get('inputImagen');
         $categoria->updated_at = Carbon::now()->format('Y-m-d H:i:s');
 
         $categoria->save();
