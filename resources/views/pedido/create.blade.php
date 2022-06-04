@@ -9,19 +9,18 @@
 @section('content')
     <form class="row g-3" action="/pedidos" method="POST">
         @csrf
-        <div class="col-2 col-md-2">
+        <div class="col-12 col-md-12">
             <label class="form-label" >ID_Cliente</label>
             <input type="number" class="form-control" name="inputClienteID" required>
         </div>
-        <div class="col-5 col-md-5">
-            <label class="form-label" >Cantidad</label>
-            <input type="number" class="form-control" name="inputCantidad" required>
-        </div>
-        <div class="col-5 col-md-5">
+        <div class="col-12 col-md-12">
             <label class="form-label" >ID_Producto</label>
             <input type="number" class="form-control" name="inputProductoID" required>
         </div>
-
+        <div class="col-12 col-md-12">
+            <label class="form-label" >Cantidad</label>
+            <input type="number" class="form-control" name="inputCantidad" required>
+        </div>
         <div class="col-12">
             <a href="/pedidos" class="btn btn-secondary">Cancelar</a>
             <button type="submit" class="btn btn-primary">Guardar</button>
