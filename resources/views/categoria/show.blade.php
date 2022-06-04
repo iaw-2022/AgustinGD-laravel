@@ -19,11 +19,11 @@
         @can('viewTimeStamps', App\Models\Categoria::class)
             <div class="col-6">
                 <label class="form-label">Creado</label>
-                <input type="text" class="form-control no-gray" value="{{$categoria->updated_at}}" readonly>
+                <input type="text" class="form-control no-gray" value="{{$categoria->created_at}}" readonly>
             </div>
             <div class="col-6">
                 <label class="form-label">Actualizado</label>
-                <input type="text" class="form-control no-gray" value="{{$categoria->created_at}}" readonly>
+                <input type="text" class="form-control no-gray" value="{{$categoria->updated_at}}" readonly>
             </div>    
         @endcan 
         <div class="col-12">

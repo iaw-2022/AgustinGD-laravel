@@ -43,11 +43,11 @@
         @can('viewTimeStamps', App\Models\Producto::class)
             <div class="col-6">
                 <label class="form-label">Creado</label>
-                <input type="text" class="form-control no-gray" value="{{$producto->updated_at}}" readonly>
+                <input type="text" class="form-control no-gray" value="{{$producto->created_at}}" readonly>
             </div>
             <div class="col-6">
                 <label class="form-label">Actualizado</label>
-                <input type="text" class="form-control no-gray" value="{{$producto->created_at}}" readonly>
+                <input type="text" class="form-control no-gray" value="{{$producto->updated_at}}" readonly>
             </div>    
         @endcan 
         <div class="col-12">

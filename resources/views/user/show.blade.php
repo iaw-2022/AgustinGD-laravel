@@ -22,11 +22,11 @@
         </div>
         <div class="col-6">
             <label class="form-label">Creado</label>
-            <input type="text" class="form-control no-gray" value="{{$user->updated_at}}" readonly>
+            <input type="text" class="form-control no-gray" value="{{$user->created_at}}" readonly>
         </div>
         <div class="col-6">
             <label class="form-label">Actualizado</label>
-            <input type="text" class="form-control no-gray" value="{{$user->created_at}}" readonly>
+            <input type="text" class="form-control no-gray" value="{{$user->updated_at}}" readonly>            
         </div> 
         <div class="col-12">
             <a href="/users" class="btn btn-secondary">Volver</a>
