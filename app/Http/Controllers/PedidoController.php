@@ -121,7 +121,7 @@ class PedidoController extends Controller
         
         try { 
             $pedido->save();
-            $titulo = '¡Agregado!';
+            $titulo = '¡Editado!';
             $message = 'Pedido editado correctamente.';
             $status = 'success';
         } catch(QueryException $ex){
