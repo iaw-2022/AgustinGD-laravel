@@ -8,6 +8,10 @@
 
 @section('content')
     <div class="row g-3">
+        <div class="col-12 col-md-12">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control no-gray" value="{{$producto->id}}" readonly>
+        </div>
         <div class="col-4 col-md-4">
             <label class="form-label">Disponibilidad</label>
 

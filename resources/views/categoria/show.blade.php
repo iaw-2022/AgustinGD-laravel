@@ -8,7 +8,11 @@
 
 @section('content')
     <div class="row g-3">
-        <div class="col-12 col-md-12">
+        <div class="col-4 col-md-4">
+            <label class="form-label" >ID</label>
+            <input type="text" class="form-control no-gray" value="{{$categoria->id}}" readonly>
+        </div>
+        <div class="col-8 col-md-8">
             <label class="form-label" >Nombre</label>
             <input type="text" class="form-control no-gray" value="{{$categoria->nombre}}" readonly>
         </div>
