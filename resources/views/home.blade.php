@@ -1,15 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Mei! App de Administración de la granja')
 
 @section('content_header')
-    <h1>Bienvenido</h1>
+    <h1>Bienvenido a Mei! Administración</h1>
 @stop
 
 @section('content')
-<div class="text-center">
-    <p>(Usuario promedio que disfruta esta Web App)</p>
-    <img src="https://c.tenor.com/TLhWkKdr770AAAAd/giga-chad.gif" alt="this slowpoke moves" height="500" data-width="50%" />
+<div style='width: 100%; text-align: center;'>
+    <img src="/logoMei.png" alt="La vaca Mei." style='height: 100%; width: 100%; max-width: 512px; object-fit: contain;' />        
 </div>
 @stop
 

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Mei! App de Administración de la granja')
 
 @section('content_header')
     <h1>Ver un Cliente</h1>
